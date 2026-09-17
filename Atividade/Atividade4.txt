@@ -1,0 +1,74 @@
+﻿namespace Heranca
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Atividade 1
+
+
+            Cachorro c = new Cachorro();
+            Gato g = new Gato();
+
+            c.Nome = "Oswaldo";
+            g.Nome = "Liria";
+            g.miar();
+            g.comer();
+            c.latir();
+            c.comer();
+
+            //Atividade 2
+
+
+            Funcionario Fu = new Funcionario();
+            Funcionario Ge = new Gerente();
+            Funcionario De = new Desenvolvedor();
+
+            Fu.salario = 3500;
+            Ge.salario = 50000;
+            De.salario = 5500;
+
+            Console.WriteLine(Fu.calcularBonusAnual());
+            Console.WriteLine(Ge.calcularBonusAnual());
+            Console.WriteLine(De.calcularBonusAnual());
+
+            //Atividade 3
+
+
+            Retangulo Re = new Retangulo();
+            Circulo Ci = new Circulo();
+
+            Re.altura = 10;
+            Re.largura = 20;
+            Console.WriteLine($" a área do retangulo é {Re.CalcularArea()}");
+            Ci.raio = 5;
+            Console.WriteLine($" a área do circulo é {Ci.CalcularArea():F2}");
+
+            //Atividade 4
+
+
+            Guerreiro Jorge = new Guerreiro("Jorge", 50, 15, 10);
+            Mago Davy = new Mago("Davy Jones", 60, 19);
+            int turno = 1;
+
+            while(Davy.EstaVivo() && Jorge.EstaVivo())
+            {
+                Console.WriteLine($"Turno: {turno}");
+
+                Jorge.Atacar(Davy);
+                if (Davy.EstaVivo())
+                {
+                    Davy.Atacar(Jorge);
+                }
+                Console.WriteLine($"Vida do Jorge {Jorge.PontosDeVida}");
+                Console.WriteLine($"Vida do Davy {Davy.PontosDeVida}");
+                turno++;
+            }
+            if (Davy.EstaVivo()) { Console.WriteLine("O vencedor foi Davy, O mago"); }
+            else { Console.WriteLine("O vencedor foi Jorge, O guerreiro"); }
+
+
+
+        }
+    }
+}

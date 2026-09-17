@@ -1,0 +1,9 @@
+﻿Cachorro c = new Cachorro();
+            Gato g = new Gato();
+
+            c.Nome = "Gabriel Felix";
+            g.Nome = "Garnica";
+            g.miar();
+            g.comer();
+            c.latir();
+            c.comer();
